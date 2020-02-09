@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/getFibonacciNumber.js" type="text/javascript"></script>
+    <script> const jerseyNumberToFibonacciNumber = {}; </script>
+    <script> jerseyNumberToFibonacciNumber['michael-jordan-fibonacci-number'] = getFibonacciNumber(23); </script>
+    <script> jerseyNumberToFibonacciNumber['larry-bird-fibonacci-number'] = getFibonacciNumber(33); </script>
+    <script> jerseyNumberToFibonacciNumber['shaquille-oneal-fibonacci-number'] = getFibonacciNumber(35) - getFibonacciNumber(34) - getFibonacciNumber(33) + getFibonacciNumber(38) - getFibonacciNumber(38) + getFibonacciNumber(34); </script>
+    
+  </head>
+  <body>
+    <div class="site-header">
+      <h1>Fibonacci Jerseys</h1>
+      <div class="header-images">
+        <img class="fibonacci-mathematician" src="images/leonardo-fibonacci.jpg" />
+        <img class="fibonacci-jersey" src="images/fibonacci-jersey.png" />
+      </div>
+    </div>
+
+    <main>
+      <table id="fibonacci-table" class="table">
+        <thead>
+          <tr>
+            <th scope="col">Face</th>
+            <th scope="col">Name</th>
+            <th scope="col">Jersey #</th>
+            <th scope="col">Fibonacci(Jersey #)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><img class="jersey-wearer-face" src="images/michael-jordan.jpg" /></th>
+            <td>Michael Jordan</td>
+            <td>23</td>
+            <td id="michael-jordan-fibonacci-number">...</td>
+          <tr>
+          <tr>
+            <th><img class="jersey-wearer-face" src="images/larry-bird.jpg" /></th>
+            <td>Larry Bird</td>
+            <td>33</td>
+            <td id="larry-bird-fibonacci-number">...</td>
+          <tr>
+          <tr>
+            <th><img class="jersey-wearer-face" src="images/shaquille-oneal.jpg" /></th>
+            <td>Shaquille O'Neal</td>
+            <td>34</td>
+            <td id="shaquille-oneal-fibonacci-numberr">...</td>
+          </tr>
+          <tr>
+          <tr>
+            <th>
+              <img class="jersey-wearer-face" src="images/gale-sayers.jpg" />
+            </th>
+            <td>Gale Sayers</td>
+            <td>40</td>
+            <td id="gale-sayers-fibonacci-number">...</td>
+          </tr>
+          <tr>
+            <th>
+              <img class="jersey-wearer-face" src="images/jackie-robinson.jpeg" />
+            </th>
+            <td>Jackie Robinson</td>
+            <td>42</td>
+            <td id="jackie-robinson-fibonacci-number">...</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <script> jerseyNumberToFibonacciNumber['gale-sayers-fibonacci-number'] = getFibonacciNumber(40) + getFibonacciNumber(39) - getFibonacciNumber(38) - getFibonacciNumber(37); </script>
+    <link rel="stylesheet" type="text/css" href="css/custom-header-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-table-styles.css">
+    <script> jerseyNumberToFibonacciNumber['jackie-robinson-fibonacci-number'] = getFibonacciNumber(42) + getFibonacciNumber(42) - getFibonacciNumber(42) + getFibonacciNumber(42) - getFibonacciNumber(42); </script>
+    <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-1.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-2.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-3.css">
+    <script>
+      Object.entries(jerseyNumberToFibonacciNumber).forEach(([elementId, fibonacciNumber]) => {
+        document.getElementById(elementId).innerText = fibonacciNumber;
+      });
+    </script>
+  </body>
+</html>

@@ -9,14 +9,13 @@
     
   </head>
   <body>
-    <div class="site-header">
+    <header class="site-header">
       <h1>Fibonacci Jerseys</h1>
       <div class="header-images">
         <img class="fibonacci-mathematician" src="images/leonardo-fibonacci.jpg" />
         <img class="fibonacci-jersey" src="images/fibonacci-jersey.png" />
       </div>
-    </div>
-
+    </header>
     <main>
       <table id="fibonacci-table" class="table">
         <thead>
@@ -78,6 +77,11 @@
       Object.entries(elementIdToFibonacciNumber).forEach(([elementId, fibonacciNumber]) => {
         document.getElementById(elementId).innerText = fibonacciNumber;
       });
+
+      const worker = new Worker('js/worker.js');
+      worker.onmessage = (message) => {
+        // AN EMPTY IMPLEMENTATION IS THE EASIEST TO MAINTAIN.
+      }
     </script>
   </body>
 </html>
